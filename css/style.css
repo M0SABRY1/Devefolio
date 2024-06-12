@@ -1,0 +1,373 @@
+/* global style */
+
+:root {
+  --main-color: #0078ff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.main-color {
+  color: var(--main-color);
+}
+
+.main-bg{
+  background-color: var(--main-color);
+}
+
+p {
+  color: #4e4e4e;
+}
+
+main p {
+  color: white;
+}
+
+.section-header {
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.625rem;
+  margin-bottom: 2.5rem;
+}
+
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.section-header::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 5%;
+  height: 0.3125rem;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.second-section-header {
+  position: relative;
+  padding-bottom: 0.9375rem;
+  margin-bottom: 1.875rem;
+}
+
+.second-section-header::before {
+  content: "";
+  position: absolute;
+  background-color: var(--main-color);
+  width: 20%;
+  height: 0.1875rem;
+  bottom: 0;
+}
+
+a{
+  color: inherit;
+  font-size: inherit;
+}
+
+
+/************************************* nav section *********************************************/
+
+.navbar {
+  background-color: RGBA(0, 0, 0, 0.8);
+}
+
+.nav-link {
+  --bs-nav-link-color: white;
+  --bs-navbar-active-color: white;
+  position: relative;
+}
+
+.navbar-nav {
+  --bs-navbar-hover-color: white;
+  font-size: 1rem;
+}
+
+.nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0.125rem;
+  left: 0.5rem;
+  bottom: 0;
+  background-color: white;
+  transition: all 0.5s;
+}
+
+.nav-link:hover::before {
+  width: 60%;
+}
+
+body:has(.home:target) .home-link::before,
+body:has(.about:target) .about-link::before,
+body:has(.services:target) .services-link::before,
+body:has(.portfolio:target) .portfolio-link::before,
+body:has(.blog:target) .blog-link::before,
+body:has(.contact:target) .contact-link::before {
+  width: 60%;
+}
+
+.dropdown-toggle::after {
+  display: inline-block;
+  margin-left: 0.255em;
+  vertical-align: 0.255em;
+  content: "";
+  border-top: 0.3em solid;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0;
+  border-left: 0.3em solid transparent;
+}
+
+/*********************************** main section  ************************************************/
+
+.home {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url(../images/hero-bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center center;
+}
+
+nav .dropdown li {
+  padding: 10px 20px;
+}
+
+.my-dropdown-menu {
+  right: 100%;
+  top: 0;
+}
+
+.my-dropdown:hover .my-dropdown-menu {
+  display: block;
+}
+
+.nav-item:hover > .dropdown-menu {
+  display: block;
+}
+
+.dropdown .dropdown-item:hover {
+  color: var(--main-color);
+}
+.dropdown button:hover {
+  color: var(--main-color);
+}
+
+/******************************* about section *******************************/
+
+.about ul li {
+  padding-bottom: 1.25rem;
+}
+span {
+  font-weight: 600;
+}
+.about p {
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+
+/******************************* services section *******************************/
+.services .services-item {
+  padding: 2.5rem 1.25rem;
+}
+
+.services .icon-container {
+  width: 7.5rem;
+  height: 7.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 10px RGB(0, 120, 255);
+  transition: all 0.5s;
+}
+
+.services .services-item:hover .icon-container {
+  background-color: var(--main-color);
+  box-shadow: 0px 0px 0px 10px rgba(0, 120, 255, 0.2);
+}
+.services .services-item:hover .icon-container i {
+  color: white;
+}
+
+/******************************* counter section *******************************/
+
+.counter {
+  background-image: linear-gradient(
+      rgba(0, 120, 255, 0.6),
+      rgba(0, 120, 255, 0.6)
+    ),
+    url(../images/counters-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+.counter .counter-icon {
+  width: 5rem;
+  height: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  border-radius: 50%;
+  box-shadow: 0px 0px 0px 10px #cde1f8;
+  transition: all 0.5s;
+}
+
+.counter p {
+  color: white;
+}
+
+/******************************* portfolio section *******************************/
+
+.portfolio .portfolio-item img {
+  transition: all 0.5s;
+}
+
+.portfolio .portfolio-item:hover img {
+  transform: scale(1.2);
+}
+
+.portfolio .icon-container {
+  font-size: 2.5rem;
+  color: var(--main-color);
+}
+
+/******************************* carousel section *******************************/
+
+.carousel-section {
+  background-image: linear-gradient(
+      rgba(0, 120, 255, 0.6),
+      rgba(0, 120, 255, 0.6)
+    ),
+    url(../images/overlay-bg.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
+.carousel-section p{
+  color: white;
+  font-size: 1.25rem;
+}
+.carousel .carousel-inner img {
+  width: 9.375rem;
+  height: 9.375rem;
+  margin: auto;
+}
+
+.carousel-section .carousel-indicators button{
+  width: .9375rem;
+  height: .9375rem;
+  border-radius: 50%;
+}
+
+/******************************* blog section *******************************/
+
+.blog .blog-item .item-footer img{
+  width: 2.1875rem;
+  height: 2.1875rem;
+}
+
+.blog .blog-item a{
+  transition: all 0.5s;
+  font-size: 1.25rem;
+}
+
+.blog .blog-item a:hover{
+  color: var(--main-color);
+}
+
+/******************************* contact section *******************************/
+
+.contact{
+  background-image: linear-gradient(
+    rgba(0, 120, 255, 0.6),
+    rgba(0, 120, 255, 0.6)
+  ),
+  url(../images/overlay-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.contact form >*:not(button){
+  width: 100%;
+  padding: .625rem .9375rem;
+ 
+}
+
+.contact form textarea{
+  resize: vertical;
+  max-height: 21.875rem;
+  min-height: 9.375rem;
+}
+
+.contact form textarea:focus,
+.contact form input:focus{
+  outline: none;
+  border: .0625rem solid var(--main-color);
+  box-shadow: 0px 0px 0px 5px rgba(0, 120, 255, 0.2)
+}
+
+.contact form button{
+  padding: .625rem 1.5rem;
+  font-size: 1.1875rem;
+  border: none;
+  transition: all 0.5s;
+}
+
+.contact form button:hover{
+  background-color: #3393FF;
+  box-shadow: 0px 0px 0px 5px rgba(0, 120, 255, 0.2);
+}
+
+.contact .contact-p{
+  color: #4E4E4E;
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.contact .contact-p + ul li{
+  margin: 1.25rem;
+  font-size: 1.25rem;
+}
+
+.contact .contact-icons div{
+  font-size: 1.25rem;
+  width: 3.125rem;
+  height: 3.125rem;
+  box-shadow: 0px 0px 0px 3px RGB(0, 120, 255);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.contact .contact-icons div:hover{
+  box-shadow: 0px 0px 0px 3px rgba(0, 120, 255, 0.2);
+  color: white;
+  background-color: var(--main-color);
+}
+
+/******************************* footer section *******************************/
+
+.footer p{
+  color: white;
+  font-size: 1.25rem;
+}
